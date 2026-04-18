@@ -59,11 +59,7 @@ npm install
 Create a `.env` file and add:
 
 ```env
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=yourdatabasename
-PORT=8080
+ DATABASE_URL="your railway Connection URL"
 ```
 
 ### 4. Run the server
@@ -176,5 +172,6 @@ Test APIs using:
  deploy this API using platforms :
 
 - **Render**
+- **Railway**
 
 
