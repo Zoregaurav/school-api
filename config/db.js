@@ -1,17 +1,15 @@
-const mysql=require("mysql2");
-require('dotenv').config();
+require("dotenv").config();
+const mysql = require("mysql2");
 
-const db=mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:process.env.DB_PASSWORD,
-    database:"schoolDB",
+//  Use the DATABASE_URL that worked before
+const db = mysql.createConnection(process.env.DATABASE_URL);
+
+db.connect((err) => {
+  if (err) {
+    console.log(" DB Connection Failed:", err);
+    return;
+  }
+  console.log("Connected to Railway MySQL");
 });
 
-
-db.connect((err)=>{
-    if(err) throw err;
-    console.log("MySQL connected");
-});
-
-module.exports=db;
+module.exports = db;
